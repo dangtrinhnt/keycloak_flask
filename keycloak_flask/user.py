@@ -11,10 +11,6 @@ from keycloak_flask.keycloak_utils import get_admin, create_user, get_oidc, get_
 logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
-#app.config.update(
-#    SECRET_KEY=b'_5#y2L"F4Q9z\n\brt]/'
-#)
-app.debug = True
 app.config.from_object('keycloak_flask.settings')
 app.config.from_envvar('KEYCLOAK_FLASK_SETTINGS')
 
