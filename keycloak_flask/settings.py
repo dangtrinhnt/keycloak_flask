@@ -1,0 +1,10 @@
+# for local
+
+SECRET_KEY = b''
+
+SERVER_URL = ""
+ADMIN_USERNAME = ""
+ADMIN_PASS = ""
+REALM_NAME = ""
+CLIENT_ID = ""
+CLIENT_SECRET = ""

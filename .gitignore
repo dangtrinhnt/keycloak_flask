@@ -1,0 +1,4 @@
+*.pyc
+__pycache__/*
+keycloak_flask/__pycache__/*
+keycloak_flask/local_settings.py
