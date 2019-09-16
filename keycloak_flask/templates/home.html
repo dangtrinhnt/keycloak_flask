@@ -6,7 +6,7 @@
 
 {% block content %}
 Welcome home!
-<div id="protected_content" style="color:red;"></div>
+<div id="protected_content" style="color:red;padding-top:20px;"></div>
 {% endblock %}
 {% block js %}
 {% if g.username %}
@@ -17,13 +17,15 @@ jQuery( document ).ready(function() {
     jQuery('#protected').click(function(){
         console.log('Click!');
         jQuery.ajaxSetup({
-            headers: { Authorization: 'Bearer ' + token }
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
         });
         jQuery.ajax({
-            url: '/protected'
+            url: '/protected',
         }).done(function(msg){
-            console.log(msg);
-	    jQuery('#protected_content').text(JSON.stringify(msg));
+             alert(JSON.stringify(msg));
+            //jQuery('#protected_content').html(JSON.stringify(msg));
         });
     });
 });

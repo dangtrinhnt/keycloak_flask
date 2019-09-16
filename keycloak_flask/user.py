@@ -1,5 +1,6 @@
 import json
 import logging
+import requests
 
 from flask import Flask, request, render_template, redirect, flash, url_for
 from flask import session, make_response, g
@@ -67,10 +68,12 @@ def headers():
 
 @app.route('/protected')
 def protected():
+    INGRESS_HOST = "http://a11bc133ac3b111e99e8a0253ebd051a-1804036005.ap-northeast-2.elb.amazonaws.com"
     resp = 'Forbidden!'
     access_token = session.get('access_token')
     if access_token:
         if check_token(access_token):
-            headers = dict(request.headers)
-            resp = 'Protected resource is accessible. Yay! Here is the Authorization HEADER: %s' % str(headers.get('Authorization'))
+            HEADERS = {'Authorization': 'Bearer ' + access_token}
+            r = requests.get(INGRESS_HOST, headers=HEADERS)
+            resp = 'Protected resource is accessible. Yay! Here is the response: %s' % str(r.text)
     return resp

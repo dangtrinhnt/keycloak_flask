@@ -8,7 +8,7 @@
   <h1>MMT on EKS</h1>
   <ul>
     {% if g.username %}
-      <li><span id="protected">Protected</span>
+      <li><span id="protected">Access protected resource</span>
       <li><span>Hello {{ g.username }}</span>
       <li><a href="{{ url_for('logout') }}">Log Out</a>
     {% else %}
@@ -27,5 +27,9 @@
   {% block content %}{% endblock %}
 </section>
 {% block js %}{% endblock %}
-
+<style>
+span#protected:hover {
+    color: green;
+}
+</style>
 

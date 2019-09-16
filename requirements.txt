@@ -10,7 +10,6 @@ cryptography==2.7
 decorator==4.4.0
 ecdsa==0.13.2
 Flask==1.1.1
-flask-oidc-ex==0.5.5
 Flask-WTF==0.14.2
 future==0.17.1
 httplib2==0.13.1
