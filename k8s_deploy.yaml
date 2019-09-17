@@ -42,7 +42,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: docker.io/dangtrinhnt/kcuser
+      - image: docker.io/dangtrinhnt/keycloak_flask
         imagePullPolicy: IfNotPresent
         name: kcuser
         ports:
