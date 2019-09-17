@@ -8,3 +8,5 @@ ADMIN_PASS = ""
 REALM_NAME = ""
 CLIENT_ID = ""
 CLIENT_SECRET = ""
+
+INGRESS_HOST = ""

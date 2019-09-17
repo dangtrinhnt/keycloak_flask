@@ -4,6 +4,7 @@ import requests
 
 from flask import Flask, request, render_template, redirect, flash, url_for
 from flask import session, make_response, g
+from flask import current_app
 
 from keycloak_flask.forms import RegistrationForm, LoginForm
 from keycloak_flask.keycloak_utils import get_admin, create_user, get_oidc, get_token, check_token
@@ -68,12 +69,12 @@ def headers():
 
 @app.route('/protected')
 def protected():
-    INGRESS_HOST = "http://a11bc133ac3b111e99e8a0253ebd051a-1804036005.ap-northeast-2.elb.amazonaws.com"
+    ingress_host = current_app.config.get('INGRESS_HOST')
     resp = 'Forbidden!'
     access_token = session.get('access_token')
     if access_token:
         if check_token(access_token):
-            HEADERS = {'Authorization': 'Bearer ' + access_token}
-            r = requests.get(INGRESS_HOST, headers=HEADERS)
+            headers = {'Authorization': 'Bearer ' + access_token}
+            r = requests.get(ingress_host, headers=headers)
             resp = 'Protected resource is accessible. Yay! Here is the response: %s' % str(r.text)
     return resp
