@@ -26,7 +26,7 @@ source ~/keycloak_flask/bin/activate
 pip install -r requirements.txt
 ```
 
-2. Copy keycloak_flask/settings.py to keycloak_flask/local_settings.py and
+2. Copy **keycloak_flask/settings.py** to **keycloak_flask/local_settings.py**
 and modify the variables with your own values
 
 3. While in the root directory of this repository, run the application
@@ -40,7 +40,7 @@ flask run
 
 ## Run the application in a Docker container in your local machine
 
-1. Copy keycloak_flask/settings.py to keycloak_flask/local_settings.py and
+1. Copy **keycloak_flask/settings.py** to **keycloak_flask/local_settings.py**
 and modify the variables with your own values
 
 2. Build the Docker image
