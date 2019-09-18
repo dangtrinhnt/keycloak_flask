@@ -1,7 +1,7 @@
 # KEYCLOAK FLASK
 
 **keycloak_flask** is an example FLASK app that uses Keycloak for user
-registration and OIDC authentication This project also provides different
+registration and OIDC authentication. This project also provides different
 ways to run the application such as Docker container on your local machine
 or in a Kubernetes cluster with Istio installed.
 
@@ -38,7 +38,7 @@ export KEYCLOAK_FLASK_SETTINGS=local_settings.py
 flask run
 ```
 
-## Run the application in a Docker container in your local machine
+## Run the application in a Docker container on your local machine
 
 1. Copy **keycloak_flask/settings.py** to **keycloak_flask/local_settings.py**
 and modify the variables with your own values
@@ -63,7 +63,7 @@ docker run -p 5000:5000 -d keycloak_flask
 kubectl apply -f <(istioctl kube-inject -f k8s_app_deploy.yaml)
 ```
 
-2. Because our application will exposed on port 5000 of the Istio gateway
+2. Because our application will be exposed on port 5000 of the Istio gateway
    which is not opened by default, we need to open it following this
    tutorial https://www.dangtrinh.com/2019/09/how-to-open-custom-port-on-istio.html 
 
