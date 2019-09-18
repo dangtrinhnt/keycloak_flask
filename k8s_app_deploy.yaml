@@ -16,16 +16,22 @@
 # kcuser service
 ##################################################################################################
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: kcuserns
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: kcuser
+  namespace: kcuserns
   labels:
     app: kcuser
 spec:
   ports:
   - name: http
     port: 5000
-    targetPort: 80
+    targetPort: 5000
   selector:
     app: kcuser
 ---
@@ -33,6 +39,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: kcuser
+  namespace: kcuserns
 spec:
   replicas: 1
   template:
@@ -46,4 +53,4 @@ spec:
         imagePullPolicy: IfNotPresent
         name: kcuser
         ports:
-        - containerPort: 80
+        - containerPort: 5000
