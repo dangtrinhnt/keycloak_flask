@@ -18,7 +18,7 @@ ipython==7.8.0
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
 jedi==0.15.1
-Jinja2==2.10.1
+Jinja2==2.10.3
 jwcrypto==0.6.0
 MarkupSafe==1.1.1
 oauth2client==4.1.3
