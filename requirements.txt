@@ -36,7 +36,7 @@ python-jwt==3.2.4
 python-keycloak==0.17.6
 requests==2.22.0
 rsa==4.0
-six==1.12.0
+six==1.15.0
 traitlets==4.3.3
 urllib3==1.26.2
 wcwidth==0.1.7
