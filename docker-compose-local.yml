@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  keycloak-flask:
+    restart: "unless-stopped"
+    build: .
+    environment:
+        - FLASK_APP=keycloak_flask.user
+        - FLASK_DEBUG=1
+        - KEYCLOAK_FLASK_SETTINGS=local_settings.py
+    ports:
+      - "5000:5000"
+
+networks:
+  kitt:
+    external: true
