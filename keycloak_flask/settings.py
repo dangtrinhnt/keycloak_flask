@@ -13,4 +13,5 @@ CLIENT_ID = "keycloak-flask"
 # set access-type to confidential, save, reload, will see a credentials tab where you can set this
 CLIENT_SECRET = "2da4a9a4-f6f0-48d9-82f6-12012402f03a"
 
+# You'll probably have to tell docker this is OK on a Mac
 INGRESS_HOST = "http://www.google.com/"
